@@ -43,12 +43,6 @@ return require('packer').startup(function(use)
         "neovim/nvim-lspconfig",
     }
     use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
-    }
-    use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
