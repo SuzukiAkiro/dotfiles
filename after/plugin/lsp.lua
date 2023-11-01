@@ -8,15 +8,16 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'lua_ls', 'pyright', 'rust_analyzer'},
+  ensure_installed = {'lua_ls', 'pyright', 'rust_analyzer', 'sqlls'},
   handlers = {
     lsp_zero.default_setup,
   },
 })
 
+
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
-
+require'lspconfig'.sqlls.setup{}
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- `Enter` key to confirm completion
