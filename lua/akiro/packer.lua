@@ -57,6 +57,15 @@ return require('packer').startup(function(use)
         },
     })
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    end}
-    use( 'Pocco81/auto-save.nvim')
-end)
+    end
+    }
+    use('Pocco81/auto-save.nvim')
+    use{
+	'Exafunction/codeium.vim',
+	config =  function()
+		vim.g.codeium_no_map_tab = true
+		vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+	end
+}
+   end
+)
