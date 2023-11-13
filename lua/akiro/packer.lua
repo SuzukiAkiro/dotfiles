@@ -67,5 +67,14 @@ return require('packer').startup(function(use)
 		vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
 	end
 }
+  use({
+	  'rose-pine/neovim',
+	  as = 'rose-pine',
+	  config = function()
+		  vim.cmd('colorscheme rose-pine')
+	  end
+  })
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('jay-babu/mason-null-ls.nvim')
    end
 )
